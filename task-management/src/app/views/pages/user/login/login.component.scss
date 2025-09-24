@@ -1,0 +1,49 @@
+:root {
+  --dark-blue: #0d3b66;
+  --mid-blue: #1d4e89;
+  --light-blue: #3e7cb1;
+  --soft-grey: #f5f6f8;
+  --mid-grey: #e1e5ea;
+  --text-dark: #1f2937;
+  --white: #ffffff;
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, var(--soft-grey), var(--mid-grey));
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid rgba(13, 59, 102, 0.08);
+  border-radius: 12px;
+}
+
+.text-dark-blue {
+  color: var(--dark-blue);
+}
+
+.btn-dark-blue {
+  background-color: var(--dark-blue);
+  border-color: var(--dark-blue);
+  color: var(--white);
+}
+.btn-dark-blue:hover,
+.btn-dark-blue:focus {
+  background-color: var(--mid-blue);
+  border-color: var(--mid-blue);
+  color: var(--white);
+}
+
+.form-control {
+  background-color: var(--white);
+  border: 1px solid #ced4da;
+}
+.form-control:focus {
+  border-color: var(--light-blue);
+  box-shadow: 0 0 0 0.2rem rgba(62, 124, 177, 0.15);
+}
+
+.card-title {
+  font-weight: 600;
+}

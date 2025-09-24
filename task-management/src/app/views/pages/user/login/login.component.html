@@ -1,1 +1,57 @@
-<p>login works!</p>
+<div class="login-page d-flex align-items-center justify-content-center min-vh-100 bg-gradient-blue">
+  <div class="card shadow-lg login-card">
+    <div class="card-body p-4 p-md-5">
+      <h2 class="card-title text-center mb-4 text-dark-blue">Welcome Back</h2>
+      <p class="text-center text-muted mb-4">Sign in to continue to Task Management</p>
+
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            id="username"
+            type="text"
+            class="form-control"
+            [class.is-invalid]="f['username'].touched && f['username'].invalid"
+            formControlName="username"
+            placeholder="Enter your username"
+            autocomplete="username"
+          />
+          <div class="invalid-feedback" *ngIf="f['username'].touched && f['username'].errors?.['required']">
+            Username is required.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            [class.is-invalid]="f['password'].touched && f['password'].invalid"
+            formControlName="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+          />
+          <div class="invalid-feedback" *ngIf="f['password'].touched && f['password'].errors?.['required']">
+            Password is required.
+          </div>
+        </div>
+
+        <button class="btn btn-dark-blue w-100" type="submit" [disabled]="loading">
+          <span *ngIf="!loading">Sign in</span>
+          <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span *ngIf="loading" class="ms-2">Signing in...</span>
+        </button>
+      </form>
+
+      <div class="mt-3 text-center">
+        <span class="text-muted">Don't have an account?</span>
+        <a class="ms-1 btn btn-link p-0 align-baseline text-dark-blue" routerLink="/register">Register</a>
+      </div>
+    </div>
+  </div>
+</div>
