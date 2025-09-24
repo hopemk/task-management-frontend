@@ -7,6 +7,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { UserModule } from './views/pages/user/user.module';
 import { TaskModule } from './views/pages/task/task.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TaskModule } from './views/pages/task/task.module';
     HttpClientModule,
     AppRoutingModule,
     UserModule,
-    TaskModule
+    TaskModule,
+    NgbModule
   ],
   providers: [
     {
