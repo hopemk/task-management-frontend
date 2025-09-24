@@ -2,3 +2,36 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+/* Custom theme helpers */
+.bg-gradient-blue {
+  background: linear-gradient(135deg, #e6f0ff 0%, #f7fbff 100%);
+}
+
+.text-dark-blue {
+  color: #0d3b66 !important;
+}
+
+.btn-dark-blue {
+  --bs-btn-bg: #0d3b66;
+  --bs-btn-border-color: #0d3b66;
+  --bs-btn-hover-bg: #0b345a;
+  --bs-btn-hover-border-color: #0b345a;
+  --bs-btn-active-bg: #092c4c;
+  --bs-btn-active-border-color: #092c4c;
+  color: #fff;
+}
+
+.task-card, .login-card {
+  border: 1px solid rgba(13, 59, 102, 0.08);
+  border-radius: .75rem;
+}
+
+/* Tables */
+.table {
+  --bs-table-striped-bg: rgba(13, 59, 102, 0.03);
+}
+
+.table thead th {
+  color: #0d3b66;
+}

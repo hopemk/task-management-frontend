@@ -2,38 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-export interface JwtDto {
-  token: string;
-  type: string;
-  id: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  phoneNumber: string;
-  roles: string[];
-}
-
-export interface LoginSuccessResponse {
-  statusCode: number; // 200
-  message: string;
-  success: true;
-  jwtDto: JwtDto;
-}
-
-export interface LoginErrorResponse {
-  statusCode: number; // 400 or 401
-  message: string;
-  success: false;
-  errorMessages: string[];
-}
+import { LoginSuccessResponse } from '../../models/user';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly baseUrl = 'http://localhost:9003';
-
   constructor(private http: HttpClient) {}
 
   isLoggedIn(): boolean {
@@ -41,7 +16,7 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<LoginSuccessResponse> {
-    const url = `${this.baseUrl}/auth/login`;
+    const url = `${environment.baseUrl}/auth/login`;
     return this.http.post<LoginSuccessResponse>(url, { username, password }).pipe(
       catchError((error: HttpErrorResponse) => {
         return throwError(() => error);

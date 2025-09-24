@@ -1,1 +1,62 @@
-<p>create works!</p>
+<div class="create-page min-vh-100 bg-gradient-blue py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 col-xl-7">
+        <div class="card shadow-sm create-card">
+          <div class="card-body p-4 p-md-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h3 class="text-dark-blue mb-0">Create Task</h3>
+              <a routerLink="/tasks" class="btn btn-outline-secondary">Back to list</a>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+              {{ errorMessage }}
+            </div>
+            <div *ngIf="successMessage" class="alert alert-success" role="alert">
+              {{ successMessage }}
+            </div>
+
+            <form [formGroup]="createForm" (ngSubmit)="onSubmit()" novalidate>
+              <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input
+                  id="title"
+                  type="text"
+                  class="form-control"
+                  [class.is-invalid]="controls['title'].touched && controls['title'].invalid"
+                  formControlName="title"
+                  placeholder="Enter task title"
+                />
+                <div class="invalid-feedback" *ngIf="controls['title'].touched && controls['title'].errors?.['required']">
+                  Title is required.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  id="description"
+                  rows="4"
+                  class="form-control"
+                  [class.is-invalid]="controls['description'].touched && controls['description'].invalid"
+                  formControlName="description"
+                  placeholder="Enter task description"
+                ></textarea>
+                <div class="invalid-feedback" *ngIf="controls['description'].touched && controls['description'].errors?.['required']">
+                  Description is required.
+                </div>
+              </div>
+
+              <button class="btn btn-dark-blue" type="submit" [disabled]="loading">
+                <span *ngIf="!loading">Create Task</span>
+                <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <span *ngIf="loading" class="ms-2">Creating...</span>
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+:root {
+  --dark-blue: #0d3b66;
+  --mid-blue: #1d4e89;
+  --light-blue: #3e7cb1;
+  --soft-grey: #f5f6f8;
+  --mid-grey: #e1e5ea;
+  --white: #ffffff;
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, var(--soft-grey), var(--mid-grey));
+}
+
+.create-card {
+  border: 1px solid rgba(3, 22, 44, 0.08);
+  border-radius: 12px;
+}
+
+.text-dark-blue {
+  color: var(--dark-blue);
+}
+
+.btn-dark-blue {
+  background-color: var(--dark-blue);
+  border-color: var(--dark-blue);
+  color: var(--white);
+}
+.btn-dark-blue:hover,
+.btn-dark-blue:focus {
+  background-color: var(--mid-blue);
+  border-color: var(--mid-blue);
+  color: var(--white);
+}
+
+.form-control:focus {
+  border-color: var(--light-blue);
+  box-shadow: 0 0 0 0.2rem rgba(62, 124, 177, 0.15);
+}
