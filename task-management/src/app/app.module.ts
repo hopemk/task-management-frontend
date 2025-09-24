@@ -4,7 +4,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
-import {RouterOutlet} from "@angular/router";
+import { AppRoutingModule } from './app-routing.module';
+import { UserModule } from './views/pages/user/user.module';
+import { TaskModule } from './views/pages/task/task.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {RouterOutlet} from "@angular/router";
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterOutlet
+    AppRoutingModule,
+    UserModule,
+    TaskModule
   ],
   providers: [
     {

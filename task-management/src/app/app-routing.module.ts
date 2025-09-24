@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ViewComponent} from '../app/views/pages/task/view/view.component';
-import { LoginComponent } from '../app/views/pages/user/login/login.component';
+import { ViewComponent} from './views/pages/task/view/view.component';
+import { LoginComponent } from './views/pages/user/login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
