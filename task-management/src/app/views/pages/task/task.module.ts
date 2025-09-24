@@ -8,6 +8,7 @@ import { ViewComponent } from './view/view.component';
 import { UpdateComponent } from './update/update.component';
 import { ViewSingleComponent } from './view-single/view-single.component';
 import { CreateComponent } from './create/create.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CreateComponent } from './create/create.component';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    TaskRoutingModule
+    TaskRoutingModule,
+    NgxDatatableModule
   ]
 })
 export class TaskModule { }

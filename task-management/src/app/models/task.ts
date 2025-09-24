@@ -3,6 +3,7 @@ export interface TaskDto {
   title: string;
   description: string;
   entityStatus: 'ACTIVE' | 'INACTIVE' | 'DELETED' | string;
+  taskStatus: 'PENDING' | 'IN_PROGRESS' | 'COMPLETED' | string;
   createdAt: string;
   createdBy: string;
 }
