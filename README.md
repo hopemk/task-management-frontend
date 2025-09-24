@@ -32,7 +32,6 @@ A simple Angular frontend for a Task Management system. It provides authenticati
 ## Available Scripts (from task-management directory)
 - `npm start` — Start dev server on http://localhost:4200
 - `npm run build` — Production build
-- `npm test` — Run unit tests
 
 ## Features
 - Login and Registration (JWT token stored in localStorage)
