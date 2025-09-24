@@ -35,7 +35,7 @@
 
                 <ngx-datatable-column name="Description" prop="description">
                   <ng-template ngx-datatable-cell-template let-row="row">
-                    <span class="text-truncate d-inline-block" style="max-width: 500px;">{{ row.description }}</span>
+                    <span class="text-break">{{ row.description }}</span>
                   </ng-template>
                 </ngx-datatable-column>
 
